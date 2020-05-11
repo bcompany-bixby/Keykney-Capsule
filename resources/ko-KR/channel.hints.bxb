@@ -1,0 +1,11 @@
+// https://bixbydevelopers.com/dev/docs/dev-guide/developers/deploying.prep-marketplace#provide-hints-for-bixby
+hints {
+  uncategorized {
+    hint (키크니 연결해줘)
+    hint (키크니 켜줘)
+    hint (키크니 시작)
+    hint (키크니에서 보여줘)
+    hint (키크니에서 인스타 보여줘)
+    hint (키크니에서 뭐가 있어)
+  }
+}

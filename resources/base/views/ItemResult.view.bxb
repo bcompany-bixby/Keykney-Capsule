@@ -1,0 +1,97 @@
+result-view {
+	match : Results (results)
+	
+	message {
+		template ("keykney(키크니) 입니다")
+	}
+	
+	render {
+		layout {
+			section {
+				content {
+					for-each (results) {
+						as(res) {
+							if (exists(res.creator)) {
+								compound-card {
+									content {
+										cell-card {
+											slot1 {
+												if (exists(res.thumbnail)) {
+													image {
+														url ("#{value(res.thumbnail)}")
+														// url ("images/default.png")
+														shape (Circle)
+													}
+												}
+											}
+											slot2 {
+												if (exists(res.creator)) {
+													content {
+														order (PrimarySecondary)
+														primary ("#{value(res.creator)}")
+														secondary ("Instagram으로 이동")
+													}
+												}
+											}
+										}
+									}
+									on-click {
+										intent {
+											goal: ItemPunchOut
+											value: $expr(res)
+										}
+									}
+								}
+							}
+							if (exists(res.liked)) {
+								compound-card {
+									content {
+										if (exists(res.thumbnail)) {
+											image-card {
+												aspect-ratio (1:1)
+												image-url ("#{value(res.thumbnail)}")
+												title-area {
+													halign (Start)
+													slot1 {
+														text {
+															value ("")
+															style (Title_M)
+														}
+													}
+												}
+											}
+										}
+										paragraph {
+											value {
+												if (exists(res.title)) {
+													template ("#{value(res.title)}")
+												}
+											}
+											style (Detail_L)
+										}
+										single-line {
+											text {
+												value {
+													if (exists(res.liked)) {
+														template ("좋아요 #{value(res.liked)}개")
+													}
+												}
+												style (Detail_M_Soft)
+											}
+										}
+									}
+									on-click {
+										intent {
+											goal: ItemPunchOut
+											value: $expr(res)
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

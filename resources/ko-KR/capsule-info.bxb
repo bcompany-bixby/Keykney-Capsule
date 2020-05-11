@@ -1,0 +1,21 @@
+// https://bixbydevelopers.com/dev/docs/dev-guide/developers/deploying.prep-marketplace#create-your-capsule-infobxb-file
+capsule-info {
+  display-name (키크니)
+  developer-name (키크니)
+  icon-asset (images/logo.jpg)
+  description (키크니 인스타그램을 볼 수 있는 캡슐입니다.)
+  website-url (https://www.instagram.com/keykney/)
+  privacy-policy-url () // 개인정보 처리방침 생성 -> 웹에 게시 -> url 정보 여기에 작성 필요 
+  
+  dispatch-name (키크니)
+  dispatch-aliases {
+    alias (keykney)
+    alias (키 크니)
+    alias (키 크니 인스타)
+  }
+  search-keywords{
+    keyword (키크니)
+    keyword (일러스트레이터미네이터) 
+    keyword (keykney)
+  }
+}
